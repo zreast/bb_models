@@ -130,28 +130,28 @@ def seperateTestandTrain_5(myData, index):
 
     return x_test, y_test, x_train, y_train
 
-def seperateTestandTrain_4(myData, index):
-    my_test = []
-    my_train = []
-    count = 0
-    for i in myData:
-        # print(i)
-        if count == index:
-            my_test.append(i)
-        else:
-            my_train.append(i)
-        count += 1
-
-    my_test = np.array(my_test)
-    my_train = np.array(my_train)
-
-    y_test = my_test[:, 4]
-    x_test = my_test[:, 0:4]
-
-    y_train = my_train[:, 4]
-    x_train = my_train[:, 0:4]
-
-    return x_test, y_test, x_train, y_train
+# def seperateTestandTrain_4(myData, index):
+#     my_test = []
+#     my_train = []
+#     count = 0
+#     for i in myData:
+#         # print(i)
+#         if count == index:
+#             my_test.append(i)
+#         else:
+#             my_train.append(i)
+#         count += 1
+#
+#     my_test = np.array(my_test)
+#     my_train = np.array(my_train)
+#
+#     y_test = my_test[:, 4]
+#     x_test = my_test[:, 0:4]
+#
+#     y_train = my_train[:, 4]
+#     x_train = my_train[:, 0:4]
+#
+#     return x_test, y_test, x_train, y_train
 
 
 
@@ -174,7 +174,8 @@ for i in range(0, 22):
     for number in range(-5, 5):
         y_predicted = []
 
-        for j in range(0, 20):
+        for j in range(0, 21):
+            # print(j)
             x_test_valid, y_test_valid, x_train_valid, y_train_valid = seperateTestandTrain_5(
                 np.concatenate((x_train, np.transpose([y_train])), axis=1), j)
 
@@ -183,7 +184,7 @@ for i in range(0, 22):
 
         y_predicted = np.array(y_predicted)
 
-        ans = (MSE(y_train, y_predicted, 20))
+        ans = (MSE(y_train, y_predicted, 21))
         # print(ans)
         if ans < optimal_ans:
             optimal_ans = ans
@@ -209,15 +210,15 @@ print("Train2")
 
 optimal_number2 = []
 for i in range(0, 22):
-    x_test, y_test, x_train, y_train = seperateTestandTrain_4(my_data2, i)
+    x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data2, i)
     print(i)
 
     optimal_ans = 100000
     for number in range(-5, 5):
         y_predicted = []
 
-        for j in range(0, 20):
-            x_test_valid, y_test_valid, x_train_valid, y_train_valid = seperateTestandTrain_4(
+        for j in range(0, 21):
+            x_test_valid, y_test_valid, x_train_valid, y_train_valid = seperateTestandTrain_5(
                 np.concatenate((x_train, np.transpose([y_train])), axis=1), j)
 
             model, ans = svm(x_train_valid, y_train_valid, x_test_valid, 10**number)
@@ -225,7 +226,7 @@ for i in range(0, 22):
 
         y_predicted = np.array(y_predicted)
 
-        ans = (MSE(y_train, y_predicted, 20))
+        ans = (MSE(y_train, y_predicted, 21))
         # print(ans)
         if ans < optimal_ans:
             optimal_ans = ans
@@ -237,12 +238,16 @@ print(optimal_number2)
 
 print(optimal_number1)
 
-
+my_data2 = genfromtxt('my_data_vol.csv', delimiter=',')
+my_data2 = np.array(my_data2)
+my_data2 = my_data2[1:]
 
 for i in range(0, 22):
-    x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data, i)
+    x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data2, i)
     model,temp = svm(x_train, y_train, x_test, 10**optimal_number1[i])
     print(temp)
+
+
 
 my_data_test = genfromtxt('my_data_pcv_svm.csv', delimiter=',')
 my_data_test = np.array(my_data_test)
@@ -250,8 +255,9 @@ my_data_test = my_data_test[1:]
 
 print('--------------------------------------')
 for i in range(0, 22):
-    x_test, y_test, x_train, y_train = seperateTestandTrain_4(my_data, i)
+    x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data_test, i)
     model,temp = svm(x_train, y_train, x_test, 10**optimal_number2[i])
+    # print(10**optimal_number2[i])
     print(temp)
 
 
@@ -285,5 +291,8 @@ for i in range(0, 22):
 # for i in range(0, 22):
 #     x_test, y_test, x_train, y_train = seperateTestandTrain_4(my_data_test_final, i)
 #     svmTest(x_train, y_train, x_test, model2)
+
+
+# for j in range(0,22):print(j)
 
 

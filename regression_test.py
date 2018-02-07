@@ -101,28 +101,28 @@ def seperateTestandTrain_5(myData, index):
 
     return x_test, y_test, x_train, y_train
 
-def seperateTestandTrain_4(myData, index):
-    my_test = []
-    my_train = []
-    count = 0
-    for i in myData:
-        # print(i)
-        if count == index:
-            my_test.append(i)
-        else:
-            my_train.append(i)
-        count += 1
-
-    my_test = np.array(my_test)
-    my_train = np.array(my_train)
-
-    y_test = my_test[:, 4]
-    x_test = my_test[:, 0:4]
-
-    y_train = my_train[:, 4]
-    x_train = my_train[:, 0:4]
-
-    return x_test, y_test, x_train, y_train
+# def seperateTestandTrain_4(myData, index):
+#     my_test = []
+#     my_train = []
+#     count = 0
+#     for i in myData:
+#         # print(i)
+#         if count == index:
+#             my_test.append(i)
+#         else:
+#             my_train.append(i)
+#         count += 1
+#
+#     my_test = np.array(my_test)
+#     my_train = np.array(my_train)
+#
+#     y_test = my_test[:, 4]
+#     x_test = my_test[:, 0:4]
+#
+#     y_train = my_train[:, 4]
+#     x_train = my_train[:, 0:4]
+#
+#     return x_test, y_test, x_train, y_train
 
 
 my_data = genfromtxt('my_data_vol.csv', delimiter=',')
@@ -142,7 +142,7 @@ my_data2 = my_data2[1:]
 print("Train2")
 # Linear Regression 2
 for i in range(0, 22):
-    x_test, y_test, x_train, y_train = seperateTestandTrain_4(my_data2, i)
+    x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data2, i)
     model2 = linearRegression(x_train, y_train, x_test)
 
 my_data_test = genfromtxt('my_data_vol.csv', delimiter=',')
@@ -162,7 +162,7 @@ my_data_test_final = my_data_test_final[1:]
 print("TestPCV")
 # Linear Regression Test
 for i in range(0, 22):
-    x_test, y_test, x_train, y_train = seperateTestandTrain_4(my_data_test_final, i)
+    x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data_test_final, i)
     linearRegressionTest(x_train, y_train, x_test, model2)
 
 # Neuron_net

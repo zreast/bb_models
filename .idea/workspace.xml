@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58011cb5-b7ee-446d-995d-3eeb309a2315" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neuron_test.py" afterPath="$PROJECT_DIR$/neuron_test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_data_pcv.csv" afterPath="$PROJECT_DIR$/my_data_pcv.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_data_pcv_reg.csv" afterPath="$PROJECT_DIR$/my_data_pcv_reg.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_data_pcv_svm.csv" afterPath="$PROJECT_DIR$/my_data_pcv_svm.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/regression_test.py" afterPath="$PROJECT_DIR$/regression_test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svm_test.py" afterPath="$PROJECT_DIR$/svm_test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,10 +20,14 @@
       <file leaf-file-name="svm_test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/svm_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="252" column="59" lean-forward="false" selection-start-line="252" selection-start-column="59" selection-end-line="252" selection-end-column="59" />
+            <state relative-caret-position="252">
+              <caret line="253" column="11" lean-forward="false" selection-start-line="253" selection-start-column="11" selection-end-line="253" selection-end-column="11" />
               <folding>
+                <element signature="e#655#898#0" expanded="false" />
                 <element signature="e#901#950#0" expanded="false" />
+                <element signature="e#2683#2800#0" expanded="false" />
+                <element signature="e#2850#3285#0" expanded="false" />
+                <element signature="e#3287#3331#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -29,9 +36,15 @@
       <file leaf-file-name="regression_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/regression_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="153" column="22" lean-forward="true" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="162">
+              <caret line="144" column="27" lean-forward="false" selection-start-line="144" selection-start-column="27" selection-end-line="144" selection-end-column="27" />
+              <folding>
+                <element signature="e#248#621#0" expanded="false" />
+                <element signature="e#687#930#0" expanded="false" />
+                <element signature="e#997#1403#0" expanded="false" />
+                <element signature="e#1480#1841#0" expanded="false" />
+                <element signature="e#1881#1998#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,8 +79,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/regression_test.py" />
         <option value="$PROJECT_DIR$/neuron_test.py" />
+        <option value="$PROJECT_DIR$/regression_test.py" />
         <option value="$PROJECT_DIR$/svm_test.py" />
       </list>
     </option>
@@ -188,8 +201,8 @@
     <recent_temporary>
       <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Python.svm_test" />
-        <item index="1" class="java.lang.String" itemvalue="Python.neuron_test" />
-        <item index="2" class="java.lang.String" itemvalue="Python.regression_test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.regression_test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.neuron_test" />
       </list>
     </recent_temporary>
   </component>
@@ -211,14 +224,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="34" width="1440" height="812" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -238,7 +250,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -248,7 +260,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#655#898#0" expanded="false" />
             <element signature="e#901#950#0" expanded="false" />
+            <element signature="e#2683#2800#0" expanded="false" />
+            <element signature="e#2850#3285#0" expanded="false" />
+            <element signature="e#3287#3331#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -257,7 +273,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="e#248#621#0" expanded="false" />
+            <element signature="e#687#930#0" expanded="false" />
+            <element signature="e#997#1403#0" expanded="false" />
+            <element signature="e#1480#1841#0" expanded="false" />
+            <element signature="e#1881#1998#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -319,18 +341,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/regression_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="153" column="22" lean-forward="true" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="162">
+          <caret line="144" column="27" lean-forward="false" selection-start-line="144" selection-start-column="27" selection-end-line="144" selection-end-column="27" />
+          <folding>
+            <element signature="e#248#621#0" expanded="false" />
+            <element signature="e#687#930#0" expanded="false" />
+            <element signature="e#997#1403#0" expanded="false" />
+            <element signature="e#1480#1841#0" expanded="false" />
+            <element signature="e#1881#1998#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/svm_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="252" column="59" lean-forward="false" selection-start-line="252" selection-start-column="59" selection-end-line="252" selection-end-column="59" />
+        <state relative-caret-position="252">
+          <caret line="253" column="11" lean-forward="false" selection-start-line="253" selection-start-column="11" selection-end-line="253" selection-end-column="11" />
           <folding>
+            <element signature="e#655#898#0" expanded="false" />
             <element signature="e#901#950#0" expanded="false" />
+            <element signature="e#2683#2800#0" expanded="false" />
+            <element signature="e#2850#3285#0" expanded="false" />
+            <element signature="e#3287#3331#0" expanded="false" />
           </folding>
         </state>
       </provider>
