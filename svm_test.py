@@ -15,7 +15,7 @@ def svm(x_train,y_train,x_test):
     x_train_norm = scaler.transform(x_train)
     x_test_norm = scaler.transform(x_test)
 
-    clf = SVR(C=10.0, epsilon=0.2)
+    clf = SVR(C=100000)
     clf.fit(x_train_norm,y_train)
 
     value_from_svm = clf.predict(x_test_norm)
@@ -196,7 +196,7 @@ for i in range(0, 22):
 
 
 
-my_data_test_final = genfromtxt('my_data_pcv_reg.csv', delimiter=',')
+my_data_test_final = genfromtxt('my_data_pcv_svm.csv', delimiter=',')
 my_data_test_final = np.array(my_data_test_final)
 my_data_test_final = my_data_test_final[1:]
 
