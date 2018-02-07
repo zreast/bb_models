@@ -300,6 +300,9 @@ for i in range(0, 22):
 
 print(optimal_number)
 
+
+
+
 # optimal_number = [1, 2, 1, 1, 1, 1, 1, 2, 3, 1, 2]
 
 for i in range(0, 22):
