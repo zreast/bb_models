@@ -6,8 +6,11 @@ from sklearn import neural_network
 from sklearn import ensemble
 from sklearn.svm import SVR
 
+epsilon_vol = 22.22876417
+epsilon_pcv = 1.806058757
 
-def svm(x_train,y_train,x_test,number):
+
+def svm(x_train,y_train,x_test,number,epsilon):
     scaler = StandardScaler()
     scaler.fit(x_train)
     # scaler.fit(y_train)
@@ -15,7 +18,7 @@ def svm(x_train,y_train,x_test,number):
     x_train_norm = scaler.transform(x_train)
     x_test_norm = scaler.transform(x_test)
 
-    clf = SVR(C=number)
+    clf = SVR(C=number,kernel='linear',epsilon = epsilon)
     clf.fit(x_train_norm,y_train)
 
     value_from_svm = clf.predict(x_test_norm)
@@ -179,7 +182,7 @@ for i in range(0, 22):
             x_test_valid, y_test_valid, x_train_valid, y_train_valid = seperateTestandTrain_5(
                 np.concatenate((x_train, np.transpose([y_train])), axis=1), j)
 
-            model, ans = svm(x_train_valid, y_train_valid, x_test_valid, 10**number)
+            model, ans = svm(x_train_valid, y_train_valid, x_test_valid, 10**number,epsilon_vol)
             y_predicted.append(ans)
 
         y_predicted = np.array(y_predicted)
@@ -221,7 +224,7 @@ for i in range(0, 22):
             x_test_valid, y_test_valid, x_train_valid, y_train_valid = seperateTestandTrain_5(
                 np.concatenate((x_train, np.transpose([y_train])), axis=1), j)
 
-            model, ans = svm(x_train_valid, y_train_valid, x_test_valid, 10**number)
+            model, ans = svm(x_train_valid, y_train_valid, x_test_valid, 10**number,epsilon_pcv)
             y_predicted.append(ans)
 
         y_predicted = np.array(y_predicted)
@@ -244,7 +247,7 @@ my_data2 = my_data2[1:]
 
 for i in range(0, 22):
     x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data2, i)
-    model,temp = svm(x_train, y_train, x_test, 10**optimal_number1[i])
+    model,temp = svm(x_train, y_train, x_test, 10**optimal_number1[i],epsilon_vol)
     print(temp)
 
 
@@ -256,7 +259,7 @@ my_data_test = my_data_test[1:]
 print('--------------------------------------')
 for i in range(0, 22):
     x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data_test, i)
-    model,temp = svm(x_train, y_train, x_test, 10**optimal_number2[i])
+    model,temp = svm(x_train, y_train, x_test, 10**optimal_number2[i],epsilon_pcv)
     # print(10**optimal_number2[i])
     print(temp)
 
