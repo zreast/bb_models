@@ -6,8 +6,10 @@ from sklearn import neural_network
 from sklearn import ensemble
 from sklearn.svm import SVR
 
-epsilon_vol = 22.22876417
-epsilon_pcv = 1.806058757
+# epsilon_vol = 22.22876417
+# epsilon_pcv = 1.806058757
+epsilon_vol = 0
+epsilon_pcv = 0
 
 
 def svm(x_train,y_train,x_test,number,epsilon):

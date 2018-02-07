@@ -232,82 +232,89 @@ print("Train1")
 #     print(mlpRegression(x_train, y_train, x_test, optimal_number[i]*100)[0])
 
 
-# XGBoost 1
-optimal_number = []
-for i in range(0, 22):
-    x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data, i)
-    print(i)
+# # XGBoost 1
+# optimal_number1 = []
+# for i in range(0, 22):
+#     x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data, i)
+#     print(i)
+#
+#     optimal_ans = 100000
+#     for number in range(1, 8):
+#         y_predicted = []
+#
+#         for j in range(0, 21):
+#             x_test_valid, y_test_valid, x_train_valid, y_train_valid = seperateTestandTrain_5(
+#                 np.concatenate((x_train, np.transpose([y_train])), axis=1), j)
+#
+#             model, ans = mlpRegressionTrain(x_train_valid, y_train_valid, x_test_valid, number)
+#             y_predicted.append(ans)
+#
+#         y_predicted = np.array(y_predicted)
+#
+#         ans = (MSE(y_train, y_predicted, 21))
+#         # print(ans)
+#         if ans < optimal_ans:
+#             optimal_ans = ans
+#             optimal_index = number
+#     optimal_number1.append(optimal_index)
+#
+# print(optimal_number1)
+#
+# # optimal_number = [1, 2, 1, 1, 1, 1, 1, 2, 3, 1, 2]
+#
+# # for i in range(0, 22):
+# #     x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data, i)
+# #     print(mlpRegressionTest(x_train, y_train, x_test, optimal_number[i]*10))
+#
+# my_data2 = genfromtxt('my_data_pcv.csv', delimiter=',')
+# my_data2 = np.array(my_data2)
+# my_data2 = my_data2[1:]
+#
+# print("Train2")
+#
+# # XGBoost 2
+# optimal_number2 = []
+# for i in range(0, 22):
+#     x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data2, i)
+#     print(i)
+#
+#     optimal_ans = 100000
+#     for number in range(1, 8):
+#         y_predicted = []
+#
+#         for j in range(0, 21):
+#             x_test_valid, y_test_valid, x_train_valid, y_train_valid = seperateTestandTrain_5(
+#                 np.concatenate((x_train, np.transpose([y_train])), axis=1), j)
+#
+#             model2, ans = mlpRegressionTrain(x_train_valid, y_train_valid, x_test_valid, number)
+#             y_predicted.append(ans)
+#
+#         y_predicted = np.array(y_predicted)
+#
+#         ans = (MSE(y_train, y_predicted, 21))
+#         # print(ans)
+#         if ans < optimal_ans:
+#             optimal_ans = ans
+#             optimal_index = number
+#     optimal_number2.append(optimal_index)
+#
+# print(optimal_number2)
+#
+# print(optimal_number1)
+# print(optimal_number2)
 
-    optimal_ans = 100000
-    for number in range(1, 8):
-        y_predicted = []
-
-        for j in range(0, 10):
-            x_test_valid, y_test_valid, x_train_valid, y_train_valid = seperateTestandTrain_5(
-                np.concatenate((x_train, np.transpose([y_train])), axis=1), j)
-
-            model, ans = mlpRegressionTrain(x_train_valid, y_train_valid, x_test_valid, number*10)
-            y_predicted.append(ans)
-
-        y_predicted = np.array(y_predicted)
-
-        ans = (MSE(y_train, y_predicted, 10))
-        # print(ans)
-        if ans < optimal_ans:
-            optimal_ans = ans
-            optimal_index = number
-    optimal_number.append(optimal_index)
-
-print(optimal_number)
-
+optimal_number1 = [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+optimal_number2 = [4, 4, 4, 5, 5, 4, 4, 4, 5, 4, 5, 4, 7, 5, 5, 4, 7, 4, 5, 5, 4, 4]
+#
 # optimal_number = [1, 2, 1, 1, 1, 1, 1, 2, 3, 1, 2]
 
 for i in range(0, 22):
     x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data, i)
-    print(mlpRegressionTest(x_train, y_train, x_test, optimal_number[i]*10))
-
-my_data2 = genfromtxt('my_data_pcv.csv', delimiter=',')
-my_data2 = np.array(my_data2)
-my_data2 = my_data2[1:]
-
-print("Train2")
-
-# XGBoost 2
-optimal_number = []
-for i in range(0, 22):
-    x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data2, i)
-    print(i)
-
-    optimal_ans = 100000
-    for number in range(1, 8):
-        y_predicted = []
-
-        for j in range(0, 10):
-            x_test_valid, y_test_valid, x_train_valid, y_train_valid = seperateTestandTrain_5(
-                np.concatenate((x_train, np.transpose([y_train])), axis=1), j)
-
-            model2, ans = mlpRegressionTrain(x_train_valid, y_train_valid, x_test_valid, number*10)
-            y_predicted.append(ans)
-
-        y_predicted = np.array(y_predicted)
-
-        ans = (MSE(y_train, y_predicted, 10))
-        # print(ans)
-        if ans < optimal_ans:
-            optimal_ans = ans
-            optimal_index = number
-    optimal_number.append(optimal_index)
-
-print(optimal_number)
+    print(mlpRegressionTest(x_train, y_train, x_test, optimal_number1[i]))
 
 
 
 
-# optimal_number = [1, 2, 1, 1, 1, 1, 1, 2, 3, 1, 2]
-
-for i in range(0, 22):
-    x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data2, i)
-    print(mlpRegressionTest(x_train, y_train, x_test, optimal_number[i]*10))
 
 my_data_test = genfromtxt('my_data_pcv_neu.csv', delimiter=',')
 my_data_test = np.array(my_data_test)
@@ -315,8 +322,11 @@ my_data_test = my_data_test[1:]
 
 print("Test")
 
+
+
+
 # XGBoost Test
 
 for i in range(0, 22):
     x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data_test, i)
-    print(mlpRegressionTestFinal(x_train, y_train, x_test, optimal_number[i]*10, model2))
+    print(mlpRegressionTest(x_train, y_train, x_test, optimal_number2[i]))
