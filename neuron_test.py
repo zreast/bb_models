@@ -211,7 +211,7 @@ print("Train1")
 #         for j in range(0, 10):
 #             x_test_valid, y_test_valid, x_train_valid, y_train_valid = seperateTestandTrain_5(
 #                 np.concatenate((x_train, np.transpose([y_train])), axis=1), j)
-#             y_predicted.append(mlpRegression(x_train_valid, y_train_valid, x_test_valid, number*100)[0])
+#             y_predicted.append(mlpRegressionTest(x_train_valid, y_train_valid, x_test_valid, number*100)[0])
 #
 #         y_predicted = np.array(y_predicted)
 #
@@ -259,20 +259,20 @@ print("Train1")
 #     optimal_number1.append(optimal_index)
 #
 # print(optimal_number1)
-#
-# # optimal_number = [1, 2, 1, 1, 1, 1, 1, 2, 3, 1, 2]
-#
-# # for i in range(0, 22):
-# #     x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data, i)
-# #     print(mlpRegressionTest(x_train, y_train, x_test, optimal_number[i]*10))
-#
+# #
+# # # optimal_number = [1, 2, 1, 1, 1, 1, 1, 2, 3, 1, 2]
+# #
+# # # for i in range(0, 22):
+# # #     x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data, i)
+# # #     print(mlpRegressionTest(x_train, y_train, x_test, optimal_number[i]*10))
+# #
 # my_data2 = genfromtxt('my_data_pcv.csv', delimiter=',')
 # my_data2 = np.array(my_data2)
 # my_data2 = my_data2[1:]
-#
-# print("Train2")
-#
-# # XGBoost 2
+# #
+# # print("Train2")
+# #
+# # # XGBoost 2
 # optimal_number2 = []
 # for i in range(0, 22):
 #     x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data2, i)
@@ -299,12 +299,12 @@ print("Train1")
 #     optimal_number2.append(optimal_index)
 #
 # print(optimal_number2)
-#
+# #
 # print(optimal_number1)
 # print(optimal_number2)
 
 optimal_number1 = [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7]
-optimal_number2 = [4, 4, 4, 5, 5, 4, 4, 4, 5, 4, 5, 4, 7, 5, 5, 4, 7, 4, 5, 5, 4, 4]
+optimal_number2 = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 4, 5, 5, 4, 4, 4, 4, 4]
 #
 # optimal_number = [1, 2, 1, 1, 1, 1, 1, 2, 3, 1, 2]
 

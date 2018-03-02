@@ -50,11 +50,11 @@ def seperateTestandTrain_5(myData, index):
     my_test = np.array(my_test)
     my_train = np.array(my_train)
 
-    y_test = my_test[:, 5]
-    x_test = my_test[:, 0:5]
+    y_test = my_test[:, 4]
+    x_test = my_test[:, 0:4]
 
-    y_train = my_train[:, 5]
-    x_train = my_train[:, 0:5]
+    y_train = my_train[:, 4]
+    x_train = my_train[:, 0:4]
 
     return x_test, y_test, x_train, y_train
 
@@ -82,9 +82,9 @@ def seperateTestandTrain_5(myData, index):
 #     return x_test, y_test, x_train, y_train
 
 
-my_data = genfromtxt('my_data_vol_new.csv', delimiter=',')
-my_data = np.array(my_data)
-my_data = my_data[1:]
+# my_data = genfromtxt('my_data_vol_new.csv', delimiter=',')
+# my_data = np.array(my_data)
+# my_data = my_data[1:]
 model1 = []
 model2 = []
 
@@ -137,7 +137,6 @@ for i in range(0, 92):
 co_weight = 0
 co_pcv_before = 0
 co_pcv_donor = 0
-co_pcv_expected = 0
 co_volume = 0
 
 print('---------coeff---------')
@@ -146,12 +145,10 @@ for i in model2:
     co_weight += abs(i.coef_[0])
     co_pcv_before += abs(i.coef_[1])
     co_pcv_donor += abs(i.coef_[2])
-    co_pcv_expected += abs(i.coef_[3])
-    co_volume += abs(i.coef_[4])
+    co_volume += abs(i.coef_[3])
 
 print(co_weight / len(model2))
 print(co_pcv_before / len(model2))
 print(co_pcv_donor / len(model2))
-print(co_pcv_expected / len(model2))
 print(co_volume / len(model2))
 

@@ -303,21 +303,21 @@ print("Train1")
 # print(optimal_number1)
 # print(optimal_number2)
 
-# optimal_number1 = [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+optimal_number1 = [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7]
 optimal_number2 = [5, 5, 7, 6, 6, 7, 7, 5, 6, 5, 6, 7, 4, 6, 7, 6, 7, 5, 7, 7, 7, 6, 7, 7, 7, 7, 5, 6, 7, 7, 6, 5, 7, 6, 5, 6, 7, 6, 5, 7, 7, 7, 5, 7, 6, 6, 5, 6, 7, 6, 5, 5, 6, 6, 7, 5, 7, 7, 7, 6, 7, 7, 6, 6, 5, 6, 7, 6, 6, 6, 5, 4, 7, 7, 6, 7, 7, 5, 5, 6, 5, 7, 7, 5, 7, 6, 5, 7, 6, 7, 7, 6]
 
 # #
 # optimal_number = [1, 2, 1, 1, 1, 1, 1, 2, 3, 1, 2]
 
-# for i in range(0, 92):
-#     x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data, i)
-#     print(mlpRegressionTest(x_train, y_train, x_test, optimal_number1[i]))
+for i in range(0, 92):
+    x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data, i)
+    print(mlpRegressionTest(x_train, y_train, x_test, optimal_number1[i]))
 
 
 
 
 
-my_data_test = genfromtxt('my_data_pcv_new.csv', delimiter=',')
+my_data_test = genfromtxt('my_data_pcv_neu_new.csv', delimiter=',')
 my_data_test = np.array(my_data_test)
 my_data_test = my_data_test[1:]
 

@@ -88,11 +88,11 @@ my_data = my_data[1:]
 model1 = []
 model2 = []
 
-# print("Train1")
-# # Linear Regression 1
-# for i in range(0, 92):
-#     x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data, i)
-#     model1.append(linearRegression(x_train, y_train, x_test))
+print("Train1")
+# Linear Regression 1
+for i in range(0, 92):
+    x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data, i)
+    model1.append(linearRegression(x_train, y_train, x_test))
 
 
 
@@ -108,23 +108,20 @@ print("Train2")
 for i in range(0, 92):
     x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data2, i)
     model2.append(linearRegression(x_train, y_train, x_test))
-#
-# my_data_test = genfromtxt('my_data_vol_new.csv', delimiter=',')
-# my_data_test = np.array(my_data_test)
-# my_data_test = my_data_test[1:]
+
+my_data_test = genfromtxt('my_data_vol_new.csv', delimiter=',')
+my_data_test = np.array(my_data_test)
+my_data_test = my_data_test[1:]
 
 
 
-# print("Test")
-# # Linear Regression Test
-# for i in range(0, 92):
-#     x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data_test, i)
-#     linearRegressionTest(x_train, y_train, x_test, model1[i])
+print("Test")
+# Linear Regression Test
+for i in range(0, 92):
+    x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data_test, i)
+    linearRegressionTest(x_train, y_train, x_test, model1[i])
 
-
-
-
-my_data_test_final = genfromtxt('my_data_pcv_new.csv', delimiter=',')
+my_data_test_final = genfromtxt('my_data_pcv_reg_new.csv', delimiter=',')
 my_data_test_final = np.array(my_data_test_final)
 my_data_test_final = my_data_test_final[1:]
 
@@ -133,25 +130,3 @@ print("TestPCV")
 for i in range(0, 92):
     x_test, y_test, x_train, y_train = seperateTestandTrain_5(my_data_test_final, i)
     linearRegressionTest(x_train, y_train, x_test, model2[i])
-
-co_weight = 0
-co_pcv_before = 0
-co_pcv_donor = 0
-co_pcv_expected = 0
-co_volume = 0
-
-print('---------coeff---------')
-for i in model2:
-    print(i.coef_)
-    co_weight += abs(i.coef_[0])
-    co_pcv_before += abs(i.coef_[1])
-    co_pcv_donor += abs(i.coef_[2])
-    co_pcv_expected += abs(i.coef_[3])
-    co_volume += abs(i.coef_[4])
-
-print(co_weight / len(model2))
-print(co_pcv_before / len(model2))
-print(co_pcv_donor / len(model2))
-print(co_pcv_expected / len(model2))
-print(co_volume / len(model2))
-
