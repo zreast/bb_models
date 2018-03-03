@@ -38,7 +38,7 @@ optimal_RMSE = 100
 optimal_index = 0
 for train_index, test_index in loo.split(X):
     # for train_index, test_index in kf.split(X):
-    print(index)
+    print("index is %d" %index)
     index += 1
     X_train, X_test = X[train_index], X[test_index]
     y_train, y_test = y[train_index], y[test_index]
