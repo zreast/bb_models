@@ -44,11 +44,11 @@ for train_index, test_index in loo.split(X):
     y_train, y_test = y[train_index], y[test_index]
 
     loo.get_n_splits(X_train)
-    temp_RMSE = 1000000
+    # temp_RMSE = 1000000
+    RMSE_list = []
     for i in range(1, 8):
         y_predicted = []
-        local_RMSE = 0
-        RMSE_list = []
+        local_RMSE = []
         for train_index, test_index in loo.split(X_train):
             X_train_valid, X_test_valid = X_train[train_index], X_train[test_index]
             y_train_valid, y_test_valid = y_train[train_index], y_train[test_index]
@@ -57,15 +57,20 @@ for train_index, test_index in loo.split(X):
             model.fit(X_train_valid, y_train_valid)
             predictions = model.predict(X_test_valid)
             x_temp = np.sqrt(metrics.mean_squared_error(y_test_valid, predictions))
-            local_RMSE += x_temp
-            RMSE_list.append(x_temp)
-        if local_RMSE < temp_RMSE:
-            temp_RMSE = local_RMSE
-            optimal_index = i
-            # print(i)
+            # print(x_temp)
+            local_RMSE.append(x_temp)
+        x = np.mean(local_RMSE)
+        RMSE_list.append(x)
     print("-----------------------------------------")
     print(RMSE_list)
-    print(i)
+    x = 1
+    temp_55 = 100
+    for i in RMSE_list:
+        if i < temp_55:
+            temp_55 = i
+            optimal_index = x
+        x = x + 1
+    print(optimal_index)
     optimal_number.append(optimal_index)
 
 # X_train, X_test = X[train_index], X[test_index]
