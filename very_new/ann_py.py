@@ -44,21 +44,28 @@ for train_index, test_index in loo.split(X):
     y_train, y_test = y[train_index], y[test_index]
 
     loo.get_n_splits(X_train)
-    temp_RMSE = 10000
+    temp_RMSE = 1000000
     for i in range(1, 8):
         y_predicted = []
         local_RMSE = 0
+        RMSE_list = []
         for train_index, test_index in loo.split(X_train):
             X_train_valid, X_test_valid = X_train[train_index], X_train[test_index]
             y_train_valid, y_test_valid = y_train[train_index], y_train[test_index]
 
-            model = neural_network.MLPRegressor(hidden_layer_sizes=(i,), activation='logistic')
+            model = neural_network.MLPRegressor(hidden_layer_sizes=(i,), activation='tanh')
             model.fit(X_train_valid, y_train_valid)
             predictions = model.predict(X_test_valid)
-            local_RMSE += np.sqrt(metrics.mean_squared_error(y_test_valid, predictions))
+            x_temp = np.sqrt(metrics.mean_squared_error(y_test_valid, predictions))
+            local_RMSE += x_temp
+            RMSE_list.append(x_temp)
         if local_RMSE < temp_RMSE:
             temp_RMSE = local_RMSE
             optimal_index = i
+            # print(i)
+    print("-----------------------------------------")
+    print(RMSE_list)
+    print(i)
     optimal_number.append(optimal_index)
 
 # X_train, X_test = X[train_index], X[test_index]
@@ -89,7 +96,7 @@ for train_index, test_index in loo.split(X):
     X_train, X_test = X[train_index], X[test_index]
     y_train, y_test = y[train_index], y[test_index]
 
-    model = neural_network.MLPRegressor(hidden_layer_sizes=(optimal_number[i],), activation='logistic')
+    model = neural_network.MLPRegressor(hidden_layer_sizes=(optimal_number[i],), activation='tanh')
     model.fit(X_train, y_train)
     predictions = model.predict(X_test)
     temp_RMSE = np.sqrt(metrics.mean_squared_error(y_test, predictions))
