@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58011cb5-b7ee-446d-995d-3eeb309a2315" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/very_new/svr.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/very_new/.ipynb_checkpoints/linear-checkpoint.ipynb" afterPath="$PROJECT_DIR$/very_new/.ipynb_checkpoints/linear-checkpoint.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/very_new/ann_py.py" afterPath="$PROJECT_DIR$/very_new/ann_py.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/very_new/linear.ipynb" afterPath="$PROJECT_DIR$/very_new/linear.ipynb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,11 +29,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ann_py.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ann_py.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/very_new/ann_py.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="65" column="9" lean-forward="true" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
+            <state relative-caret-position="1515">
+              <caret line="101" column="40" lean-forward="true" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="neuron_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/neuron_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3084">
+              <caret line="210" column="32" lean-forward="true" selection-start-line="210" selection-start-column="32" selection-end-line="210" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="svm_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/svm_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="svr.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/very_new/svr.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -63,12 +103,13 @@
         <option value="$PROJECT_DIR$/linear/new/linear1_model.py" />
         <option value="$PROJECT_DIR$/nerual/without pcv expected/nerual_1model.py" />
         <option value="$PROJECT_DIR$/very_new/ann_py.py" />
+        <option value="$PROJECT_DIR$/very_new/svr.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1735" />
-    <option name="y" value="-103" />
+    <option name="x" value="1837" />
+    <option name="y" value="-116" />
     <option name="width" value="1440" />
     <option name="height" value="812" />
   </component>
@@ -109,12 +150,6 @@
             <path>
               <item name="bb_models" type="b2602c69:ProjectViewProjectNode" />
               <item name="bb_models" type="462c0819:PsiDirectoryNode" />
-              <item name="nerual" type="462c0819:PsiDirectoryNode" />
-              <item name="without pcv expected" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bb_models" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bb_models" type="462c0819:PsiDirectoryNode" />
               <item name="very_new" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -145,7 +180,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ann_py">
+  <component name="RunManager" selected="Python.svr">
     <configuration name="ann_py" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -214,37 +249,37 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="nerual_1model" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="svr" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/nerual" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/very_new" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="bb_models" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/nerual/nerual_1model.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/very_new/svr.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.linear1_model" />
-      <item index="1" class="java.lang.String" itemvalue="Python.nerual_1model" />
-      <item index="2" class="java.lang.String" itemvalue="Python.linear1_model (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.nerual_1model (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Python.ann_py" />
+      <item index="1" class="java.lang.String" itemvalue="Python.linear1_model (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.nerual_1model (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Python.ann_py" />
+      <item index="4" class="java.lang.String" itemvalue="Python.svr" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.ann_py" />
-        <item index="1" class="java.lang.String" itemvalue="Python.nerual_1model (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.linear1_model (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.linear1_model" />
-        <item index="4" class="java.lang.String" itemvalue="Python.nerual_1model" />
+        <item index="0" class="java.lang.String" itemvalue="Python.svr" />
+        <item index="1" class="java.lang.String" itemvalue="Python.ann_py" />
+        <item index="2" class="java.lang.String" itemvalue="Python.nerual_1model (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.linear1_model (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.linear1_model" />
       </list>
     </recent_temporary>
   </component>
@@ -265,8 +300,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1735" y="-103" width="1440" height="812" extended-state="0" />
-    <editor active="true" />
+    <frame x="1837" y="-116" width="1440" height="812" extended-state="0" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -299,8 +333,13 @@
           <line>144</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/neuron_test.py</url>
+          <line>101</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -356,20 +395,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="589" column="0" lean-forward="false" selection-start-line="589" selection-start-column="0" selection-end-line="589" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/svm_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="170" column="37" lean-forward="false" selection-start-line="170" selection-start-column="37" selection-end-line="170" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/neuron_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="311" column="32" lean-forward="false" selection-start-line="311" selection-start-column="32" selection-end-line="311" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -453,8 +478,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/very_new/ann_py.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="65" column="9" lean-forward="true" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
+        <state relative-caret-position="1515">
+          <caret line="101" column="40" lean-forward="true" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svm_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuron_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3084">
+          <caret line="210" column="32" lean-forward="true" selection-start-line="210" selection-start-column="32" selection-end-line="210" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/very_new/svr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
