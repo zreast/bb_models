@@ -8,19 +8,39 @@ from sklearn.preprocessing import StandardScaler
 # from sklearn import linear_model
 from sklearn.svm import SVR
 
-df = pd.read_csv('data.csv')
+# df = pd.read_csv('drop_out.csv')
+df = pd.read_csv('fill.csv')
 
 # X = df[['Weight', 'PCV', 'PCV\ndonor', 'Volume', 'WBC', 'PLT\n______', 'PLATELETS', 'HGB', 'RBC', 'MCV', 'MCHC', 'MCH',
 #         'SEGS', 'LYMPH', 'MONO', 'PROTEIN (REFRACT)', 'RDW']]
+
+# X = df[['Weight', 'PCV', 'PCV\ndonor', 'Volume', 'WBC', 'PLT\n______', 'HGB', 'RBC', 'MCV', 'MCHC', 'MCH',
+#         'SEGS', 'LYMPH', 'MONO','RDW']]
+
 X = df[['Weight','PCV','PCV\ndonor','Volume']]
 y = df['PCV_afterdonation']
+Vet = df[['PCV_target']]
 # X = df[['base_total','against_psychic','against_bug']]
 column_name = X.columns
+
+# # convert to numeric
+# X = X.apply(pd.to_numeric, errors='coerce')
+# y = y.apply(pd.to_numeric, errors='coerce')
+# Vet = Vet.apply(pd.to_numeric, errors='coerce')
+#
+#
+#
+# # fill with mean
+# X = X.fillna(X.mean())
+# y = y.fillna(y.mean())
+# Vet = Vet.fillna(Vet.mean())
+
+
 X = np.array(X)
 # y = df['attack']
 y = np.array(y)
-Vet = df[['PCV_target']]
 Vet = np.array(Vet)
+
 
 
 scaler = StandardScaler()
