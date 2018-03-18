@@ -7,9 +7,19 @@ import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 # from sklearn import linear_model
 from sklearn.svm import SVR
+from scipy import stats
 
-# df = pd.read_csv('drop_out.csv')
-df = pd.read_csv('fill.csv')
+def rmse(predictions, targets):
+    count = 0
+    k = []
+    for x in predictions:
+        temp = np.sqrt(((predictions[count] - targets[count]) ** 2)/2)
+        count+=1
+        k.append(temp)
+    return k
+
+df = pd.read_csv('drop_out.csv')
+# df = pd.read_csv('fill.csv')
 
 # X = df[['Weight', 'PCV', 'PCV\ndonor', 'Volume', 'WBC', 'PLT\n______', 'PLATELETS', 'HGB', 'RBC', 'MCV', 'MCHC', 'MCH',
 #         'SEGS', 'LYMPH', 'MONO', 'PROTEIN (REFRACT)', 'RDW']]
@@ -19,7 +29,7 @@ df = pd.read_csv('fill.csv')
 
 X = df[['Weight','PCV','PCV\ndonor','Volume']]
 y = df['PCV_afterdonation']
-Vet = df[['PCV_target']]
+Vet = df['PCV_target']
 # X = df[['base_total','against_psychic','against_bug']]
 column_name = X.columns
 
@@ -108,6 +118,7 @@ for train_index, test_index in loo.split(X):
 
 print("test state SVR")
 RMSE=[]
+train_RMSE = []
 i = 0
 coef_list = []
 for train_index, test_index in loo.split(X):
@@ -120,6 +131,11 @@ for train_index, test_index in loo.split(X):
 #     model = linear_model.Ridge (alpha = 10**optimal_number[i])
     model = SVR(C=10**optimal_number[i],kernel='linear',epsilon = epsilon)
     model.fit(X_train,y_train)
+    #     for train accuracy
+    xxx = model.predict(X_train)
+    temp_train_RMSE = np.sqrt(metrics.mean_squared_error(y_train, xxx))
+    train_RMSE.append(temp_train_RMSE)
+#     asdfafdafd
     predictions = model.predict(X_test)
     temp_RMSE = np.sqrt(metrics.mean_squared_error(y_test, predictions))
     RMSE.append(temp_RMSE)
@@ -127,7 +143,16 @@ for train_index, test_index in loo.split(X):
 #     print(temp_RMSE)
     i = i +1
 print(column_name)
-print ('Average SVR RMSE : %f'%np.mean(RMSE))
+print ('Average SVR RMSE : %f ± %f'%(np.mean(RMSE), np.std(RMSE)))
+print ('average train RMSE  : %f ± %f'%(np.mean(train_RMSE), np.std(train_RMSE)))
+
+print("********")
+rmse_vet = rmse(Vet,y)
+# print(rmse_vet)
+# print(stats.ttest_rel(RMSE,rmse_vet).pvalue)
+p_value = stats.ttest_rel(RMSE,rmse_vet).pvalue
+print('P value is %f'%p_value)
+
 print ('RMSE Vet : %f'%np.mean(np.sqrt(metrics.mean_squared_error(Vet, y))))
 
 # print ('Average SVR Coef')
