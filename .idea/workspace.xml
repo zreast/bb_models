@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58011cb5-b7ee-446d-995d-3eeb309a2315" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/very_new/ XGboost.ipynb" afterPath="$PROJECT_DIR$/very_new/ XGboost.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/very_new/.ipynb_checkpoints/ XGboost-checkpoint.ipynb" afterPath="$PROJECT_DIR$/very_new/.ipynb_checkpoints/ XGboost-checkpoint.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/very_new/.ipynb_checkpoints/Ridge Regression-checkpoint.ipynb" afterPath="$PROJECT_DIR$/very_new/.ipynb_checkpoints/Ridge Regression-checkpoint.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/very_new/.ipynb_checkpoints/linear-checkpoint.ipynb" afterPath="$PROJECT_DIR$/very_new/.ipynb_checkpoints/linear-checkpoint.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/very_new/Ridge Regression.ipynb" afterPath="$PROJECT_DIR$/very_new/Ridge Regression.ipynb" />
@@ -23,8 +21,8 @@
       <file leaf-file-name="svr.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/very_new/svr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="154" column="0" lean-forward="true" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="49" column="18" lean-forward="true" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -507,8 +505,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/very_new/svr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="154" column="0" lean-forward="true" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="49" column="18" lean-forward="true" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

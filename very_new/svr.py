@@ -136,6 +136,7 @@ for train_index, test_index in loo.split(X):
     temp_train_MSE = (metrics.mean_squared_error(y_train, xxx))
     train_MSE.append(temp_train_MSE)
 #     asdfafdafd
+    print(predictions[0])
     predictions = model.predict(X_test)
     temp_MSE = (metrics.mean_squared_error(y_test, predictions))
     MSE.append(temp_MSE)
