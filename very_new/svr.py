@@ -13,7 +13,7 @@ def mse(predictions, targets):
     count = 0
     k = []
     for x in predictions:
-        temp = (((predictions[count] - targets[count]) ** 2)/2)
+        temp = (((predictions[count] - targets[count]) ** 2))
         count+=1
         k.append(temp)
     return k
@@ -71,7 +71,7 @@ optimal_number = []
 MSE = []
 print("train SVR")
 index = 0
-optimal_MSE = 100
+optimal_MSE = 10000
 optimal_index = 0
 for train_index, test_index in loo.split(X):
     # for train_index, test_index in kf.split(X):
@@ -153,7 +153,7 @@ mse_vet = mse(Vet,y)
 p_value = stats.ttest_rel(MSE,mse_vet).pvalue
 print('P value is %f'%p_value)
 
-print ('MSE Vet : %f'%np.mean((metrics.mean_squared_error(Vet, y))))
+print ('MSE Vet : %f ± %f'%(np.mean(metrics.mean_squared_error(Vet, y)), np.std(mse_vet)))
 
 # print ('Average SVR Coef')
 # coef_list = np.matrix(coef_list)
