@@ -9,11 +9,11 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVR
 from scipy import stats
 
-def rmse(predictions, targets):
+def mse(predictions, targets):
     count = 0
     k = []
     for x in predictions:
-        temp = np.sqrt(((predictions[count] - targets[count]) ** 2)/2)
+        temp = (((predictions[count] - targets[count]) ** 2)/2)
         count+=1
         k.append(temp)
     return k
@@ -68,10 +68,10 @@ loo = LeaveOneOut()
 loo.get_n_splits(X)
 
 optimal_number = []
-RMSE = []
+MSE = []
 print("train SVR")
 index = 0
-optimal_RMSE = 100
+optimal_MSE = 100
 optimal_index = 0
 for train_index, test_index in loo.split(X):
     # for train_index, test_index in kf.split(X):
@@ -81,11 +81,11 @@ for train_index, test_index in loo.split(X):
     y_train, y_test = y[train_index], y[test_index]
 
     loo.get_n_splits(X_train)
-    # temp_RMSE = 1000000
-    RMSE_list = []
+    # temp_MSE = 1000000
+    MSE_list = []
     for i in range(-6, 4):
         y_predicted = []
-        local_RMSE = []
+        local_MSE = []
         for train_index, test_index in loo.split(X_train):
             X_train_valid, X_test_valid = X_train[train_index], X_train[test_index]
             y_train_valid, y_test_valid = y_train[train_index], y_train[test_index]
@@ -97,16 +97,16 @@ for train_index, test_index in loo.split(X):
             model = SVR(C=10**i,kernel='linear',epsilon = epsilon)
             model.fit(X_train,y_train)
             predictions = model.predict(X_test_valid)
-            x_temp = np.sqrt(metrics.mean_squared_error(y_test_valid, predictions))
+            x_temp = (metrics.mean_squared_error(y_test_valid, predictions))
             # print(x_temp)
-            local_RMSE.append(x_temp)
-        x = np.mean(local_RMSE)
-        RMSE_list.append(x)
+            local_MSE.append(x_temp)
+        x = np.mean(local_MSE)
+        MSE_list.append(x)
 #     print("-----------------------------------------")
-#     print(RMSE_list)
+#     print(MSE_list)
     x = -6
     temp_55 = 100
-    for i in RMSE_list:
+    for i in MSE_list:
         if i < temp_55:
             temp_55 = i
             optimal_index = x
@@ -117,8 +117,8 @@ for train_index, test_index in loo.split(X):
 
 
 print("test state SVR")
-RMSE=[]
-train_RMSE = []
+MSE=[]
+train_MSE = []
 i = 0
 coef_list = []
 for train_index, test_index in loo.split(X):
@@ -133,27 +133,27 @@ for train_index, test_index in loo.split(X):
     model.fit(X_train,y_train)
     #     for train accuracy
     xxx = model.predict(X_train)
-    temp_train_RMSE = np.sqrt(metrics.mean_squared_error(y_train, xxx))
-    train_RMSE.append(temp_train_RMSE)
+    temp_train_MSE = (metrics.mean_squared_error(y_train, xxx))
+    train_MSE.append(temp_train_MSE)
 #     asdfafdafd
     predictions = model.predict(X_test)
-    temp_RMSE = np.sqrt(metrics.mean_squared_error(y_test, predictions))
-    RMSE.append(temp_RMSE)
+    temp_MSE = (metrics.mean_squared_error(y_test, predictions))
+    MSE.append(temp_MSE)
 #     coef_list.append(model.coef_)
-#     print(temp_RMSE)
+#     print(temp_MSE)
     i = i +1
 print(column_name)
-print ('Average SVR RMSE : %f ± %f'%(np.mean(RMSE), np.std(RMSE)))
-print ('average train RMSE  : %f ± %f'%(np.mean(train_RMSE), np.std(train_RMSE)))
+print ('Average SVR MSE : %f ± %f'%(np.mean(MSE), np.std(MSE)))
+print ('average train MSE  : %f ± %f'%(np.mean(train_MSE), np.std(train_MSE)))
 
 print("********")
-rmse_vet = rmse(Vet,y)
-# print(rmse_vet)
-# print(stats.ttest_rel(RMSE,rmse_vet).pvalue)
-p_value = stats.ttest_rel(RMSE,rmse_vet).pvalue
+mse_vet = mse(Vet,y)
+# print(mse_vet)
+# print(stats.ttest_rel(MSE,mse_vet).pvalue)
+p_value = stats.ttest_rel(MSE,mse_vet).pvalue
 print('P value is %f'%p_value)
 
-print ('RMSE Vet : %f'%np.mean(np.sqrt(metrics.mean_squared_error(Vet, y))))
+print ('MSE Vet : %f'%np.mean((metrics.mean_squared_error(Vet, y))))
 
 # print ('Average SVR Coef')
 # coef_list = np.matrix(coef_list)
