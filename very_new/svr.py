@@ -18,8 +18,8 @@ def mse(predictions, targets):
         k.append(temp)
     return k
 
-df = pd.read_csv('drop_out.csv')
-# df = pd.read_csv('fill.csv')
+# df = pd.read_csv('drop_out.csv')
+df = pd.read_csv('fill.csv')
 
 # X = df[['Weight', 'PCV', 'PCV\ndonor', 'Volume', 'WBC', 'PLT\n______', 'PLATELETS', 'HGB', 'RBC', 'MCV', 'MCHC', 'MCH',
 #         'SEGS', 'LYMPH', 'MONO', 'PROTEIN (REFRACT)', 'RDW']]
